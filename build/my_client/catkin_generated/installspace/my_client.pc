@@ -1,8 +1,0 @@
-prefix=/home/seungwon/catkin_ws/install
-
-Name: my_client
-Description: Description of my_client
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp

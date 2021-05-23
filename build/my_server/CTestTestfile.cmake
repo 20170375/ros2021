@@ -1,6 +1,0 @@
-# CMake generated Testfile for 
-# Source directory: /home/seungwon/catkin_ws/src/my_server
-# Build directory: /home/seungwon/catkin_ws/build/my_server
-# 
-# This file includes the relevant testing commands required for 
-# testing this directory and lists subdirectories to be tested as well.

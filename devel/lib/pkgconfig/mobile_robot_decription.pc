@@ -1,8 +1,0 @@
-prefix=/home/seungwon/catkin_ws/devel
-
-Name: mobile_robot_decription
-Description: Description of mobile_robot_decription
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp rospy urdf

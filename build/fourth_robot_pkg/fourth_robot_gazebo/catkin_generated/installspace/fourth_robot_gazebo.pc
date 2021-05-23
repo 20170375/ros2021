@@ -1,8 +1,0 @@
-prefix=/home/seungwon/catkin_ws/install
-
-Name: fourth_robot_gazebo
-Description: Description of fourth_robot_gazebo
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

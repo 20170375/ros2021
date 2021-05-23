@@ -1,8 +1,0 @@
-prefix=/home/seungwon/catkin_ws/install
-
-Name: eigen_practice
-Description: Description of eigen_practice
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: roscpp
