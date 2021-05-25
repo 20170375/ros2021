@@ -36,46 +36,46 @@
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
     <!-- Araguments -->
-    <arg name="scan_topic"      default="/front/scan" />
+    <!-- <arg name="scan_topic"      default="/front/scan" /> -->
+    <arg name="scan_topic"      default="/scan" />
     <arg name="initial_pose_x"  default="0.0" />
     <arg name="initial_pose_y"  default="0.0" />
     <arg name="initial_pose_a"  default="0.0" />
 
     <!-- AMCL -->
     <node pkg="amcl" type="amcl" name="amcl">
-        <param name="min_particles"             value="500" />
-        <param name="max_particles"             value="3000" />
-        <param name="kld_err"                   value="0.02" />
-        <param name="update_min_d"              value="0.20" />
-        <param name="update_min_a"              value="0.20" />
-        <param name="resample_interval"         value="1" />
-        <param name="transform_tolerance"       value="0.5" />
-        <param name="recovery_alpha_slow"       value="0.00" />
-        <param name="recovery_alpha_fast"       value="0.00" />
-        <param name="initial_pose_x"            value="$(arg initial_pose_x)" />
-        <param name="initial_pose_y"            value="$(arg initial_pose_y)" />
-        <param name="initial_pose_a"            value="$(arg initial_pose_a)" />
-        <param name="gui_publish_rate"          value="50.0" />
+        <param name="min_particles"             value="500" />  <!-- 최소 particle 수 -->
+        <param name="kld_err"                   value="0.02" /> <!-- 최대 분산과 추정분산 사이의 오차 -->
+        <param name="update_min_d"              value="0.20" /> <!-- 필터 업데이트에 필요한 최소 이동 -->
+        <param name="update_min_a"              value="0.20" /> <!-- 필터 업데이트에 필요한 최소 회전 -->
+        <param name="resample_interval"         value="1" />    <!-- 리샘플링에 필요한 필터 업데이트 수 -->
+        <param name="transform_tolerance"       value="0.5" />  <!-- transform의 유효 시간 -->
+        <param name="recovery_alpha_slow"       value="0.00" /> <!-- slow 평균가중치필터의 지수붕괴율. 회복 시기를 결정. -->
+        <param name="recovery_alpha_fast"       value="0.00" /> <!-- fast 평균가중치필터의 지수붕괴율. 회복 시기를 결정. -->
+        <param name="initial_pose_x"            value="$(arg initial_pose_x)" />    <!-- 초기 x의 pose -->
+        <param name="initial_pose_y"            value="$(arg initial_pose_y)" />    <!-- 초기 y의 pose -->
+        <param name="initial_pose_a"            value="$(arg initial_pose_a)" />    <!-- 초기 yaw의 pose -->
+        <param name="gui_publish_rate"          value="50.0" /> <!-- 최대 시각화 속도 -->
 
         <remap from="scan"                      to="$(arg scan_topic)" />
-        <param name="laser_max_range"           value="3.5" />
-        <param name="laser_max_beams"           value="180" />
-        <param name="laser_z_hit"               value="0.5" />
-        <param name="laser_z_short"             value="0.05" />
-        <param name="laser_z_max"               value="0.05" />
-        <param name="laser_z_rand"              value="0.5" />
-        <param name="laser_sigma_hit"           value="0.2" />
-        <param name="laser_lambda_short"        value="0.1" />
-        <param name="laser_likelihood_max_dist" value="2.0" />
-        <param name="laser_model_type"          value="likelihood_field" />
+        <param name="laser_max_range"           value="3.5" />  <!-- 최대 스캔 범위 -->
+        <param name="laser_max_beams"           value="180" />  <!-- 스캔의 최대 빔 수 -->
+        <param name="laser_z_hit"               value="0.5" />  <!-- 혼합 가중치 z_hit -->
+        <param name="laser_z_short"             value="0.05" /> <!-- 혼합 가중치 z_short -->
+        <param name="laser_z_max"               value="0.05" /> <!-- 혼합 가중치 z_max -->
+        <param name="laser_z_rand"              value="0.5" />  <!-- 혼합 가중치 z_rand -->
+        <param name="laser_sigma_hit"           value="0.2" />  <!-- z_hit의 표준편차 -->
+        <param name="laser_lambda_short"        value="0.1" />  <!-- z_short의 지수붕괴 parameter -->
+        <param name="laser_likelihood_max_dist" value="2.0" />  <!-- likelihood_field 모델에서 사용하는 장애물 팽창을 하기 위한 최대 거리-->
+        <param name="laser_model_type"          value="likelihood_field" /> <!-- 사용할 모델 -->
 
-        <param name="odom_model_type"           value="diff" />
-        <param name="odom_alpha1"               value="0.1" />
-        <param name="odom_alpha2"               value="0.1" />
-        <param name="odom_alpha3"               value="0.1" />
-        <param name="odom_alpha4"               value="0.1" />
-        <param name="odom_frame_id"             value="odom" />
-        <param name="base_frame_id"             value="base_footprint" />
+        <param name="odom_model_type"           value="diff" /> <!-- 사용할 모델 -->
+        <param name="odom_alpha1"               value="0.1" />  <!-- 로봇의 이동으로 얻은 회전 추정의 노이즈 -->
+        <param name="odom_alpha2"               value="0.1" />  <!-- 로봇의 이동으로 얻은 회전 추정의 노이즈 -->
+        <param name="odom_alpha3"               value="0.1" />  <!-- 로봇의 회전으로 얻은 이동 추정의 노이즈 -->
+        <param name="odom_alpha4"               value="0.1" />  <!-- 로봇의 회전으로 얻은 이동 추정의 노이즈 -->
+        <param name="odom_frame_id"             value="odom" /> <!-- odometry에 사용할 frame -->
+        <param name="base_frame_id"             value="base_footprint" />   <!-- robot base로 사용할 frame -->
 
     </node>
 

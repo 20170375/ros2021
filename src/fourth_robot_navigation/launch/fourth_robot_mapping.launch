@@ -3,33 +3,33 @@
     <param name="use_sim_time" value="true"/>
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
       <remap from="scan" to="/front/scan/"/>
-      <param name="map_update_interval" value="5.0"/>
-      <param name="maxUrange" value="50.0"/>
-      <param name="sigma" value="0.05"/>
-      <param name="kernelSize" value="1"/>
-      <param name="lstep" value="0.05"/>
-      <param name="astep" value="0.05"/>
-      <param name="iterations" value="5"/>
-      <param name="lsigma" value="0.075"/>
-      <param name="ogain" value="3.0"/>
-      <param name="lskip" value="0"/>
-      <param name="srr" value="0.1"/>
-      <param name="srt" value="0.2"/>
-      <param name="str" value="0.1"/>
-      <param name="stt" value="0.2"/>
-      <param name="linearUpdate" value="1.0"/>
-      <param name="angularUpdate" value="0.5"/>
-      <param name="temporalUpdate" value="3.0"/>
-      <param name="resampleThreshold" value="0.5"/>
-      <param name="particles" value="30"/>
-      <param name="xmin" value="-50.0"/>
-      <param name="ymin" value="-50.0"/>
-      <param name="xmax" value="50.0"/>
-      <param name="ymax" value="50.0"/>
-      <param name="delta" value="0.05"/>
-      <param name="llsamplerange" value="0.01"/>
-      <param name="llsamplestep" value="0.01"/>
-      <param name="lasamplerange" value="0.005"/>
-      <param name="lasamplestep" value="0.005"/>
+      <param name="map_update_interval" value="5.0"/> <!-- map 업데이트 주기 -->
+      <param name="maxUrange" value="50.0"/>          <!-- 최대 레이저 범위 -->
+      <param name="sigma" value="0.05"/>              <!-- greedy endpoint matching에서 사용되는 sigma -->
+      <param name="kernelSize" value="1"/>            <!-- 유사도를 찾기위한 kernel -->
+      <param name="lstep" value="0.05"/>              <!-- 이동에서 최적 스탭 -->
+      <param name="astep" value="0.05"/>              <!-- 회전에서 최적 스탭 -->
+      <param name="iterations" value="5"/>            <!-- scanmatcher의 iteration 수 -->
+      <param name="lsigma" value="0.075"/>            <!-- 빔의 sigma -->
+      <param name="ogain" value="3.0"/>               <!-- 리샘플링 영향을 평탄화하기 위한 Gain -->
+      <param name="lskip" value="0"/>                 <!-- 각 스캔에서 건너뛸 빔 수 -->
+      <param name="srr" value="0.1"/>                 <!-- 이동에서 odometry 이동 오차 -->
+      <param name="srt" value="0.2"/>                 <!-- 회전에서 odometry 이동 오차 -->
+      <param name="str" value="0.1"/>                 <!-- 이동에서 odometry 회전 오차 -->
+      <param name="stt" value="0.2"/>                 <!-- 회전에서 odometry 회전 오차 -->
+      <param name="linearUpdate" value="1.0"/>        <!-- 스캔 이동 -->
+      <param name="angularUpdate" value="0.5"/>       <!-- 스캔 각도 -->
+      <param name="temporalUpdate" value="3.0"/>      <!-- 스캔 주기 -->
+      <param name="resampleThreshold" value="0.5"/>   <!-- Neff기반 리샘플링 threshold(임계값) -->
+      <param name="particles" value="30"/>            <!-- 필터의 particle 수 -->
+      <param name="xmin" value="-50.0"/>              <!-- 초기 map size -->
+      <param name="ymin" value="-50.0"/>              <!-- 초기 map size -->
+      <param name="xmax" value="50.0"/>               <!-- 초기 map size -->
+      <param name="ymax" value="50.0"/>               <!-- 초기 map size -->
+      <param name="delta" value="0.05"/>              <!-- map 해상도 -->
+      <param name="llsamplerange" value="0.01"/>      <!-- likelihood 이동 샘플링 범위 -->
+      <param name="llsamplestep" value="0.01"/>       <!-- likelihood 이동 샘플링 step -->
+      <param name="lasamplerange" value="0.005"/>     <!-- likelihood 각도 샘플링 범위 -->
+      <param name="lasamplestep" value="0.005"/>      <!-- likelihood 각도 샘플링 step -->
     </node>
 </launch>
