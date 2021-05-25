@@ -1,0 +1,3 @@
+[submodule "fourth_robot_pkg"]
+	path = fourth_robot_pkg
+	url = https://github.com/CIR-KIT/fourth_robot_pkg.git
