@@ -7,3 +7,6 @@
 [submodule "src/turtlebot3_simulations"]
 	path = src/turtlebot3_simulations
 	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations
+[submodule "src/open_manipulator"]
+	path = src/open_manipulator
+	url = https://github.com/ROBOTIS-GIT/open_manipulator.git
