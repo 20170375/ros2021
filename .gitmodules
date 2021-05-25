@@ -10,3 +10,6 @@
 [submodule "src/open_manipulator"]
 	path = src/open_manipulator
 	url = https://github.com/ROBOTIS-GIT/open_manipulator.git
+[submodule "src/universal_robot"]
+	path = src/universal_robot
+	url = https://github.com/ros-industrial/universal_robot.git
