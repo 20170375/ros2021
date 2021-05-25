@@ -4,3 +4,6 @@
 [submodule "src/fourth_robot_pkg"]
 	path = src/fourth_robot_pkg
 	url = https://github.com/CIR-KIT/fourth_robot_pkg.git
+[submodule "src/turtlebot3_simulations"]
+	path = src/turtlebot3_simulations
+	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations
