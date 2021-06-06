@@ -1,5 +1,5 @@
 <launch>
-    <include file="$(find fourth_robot_navigation)/launch/fourth_robot_gazebo.launch"/>
+    <include file="$(find fourth_robot_navigation)/launch/fourth_robot_gazebo.launch"/> <!-- open map -->
     <param name="use_sim_time" value="true"/>
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
       <remap from="scan" to="/front/scan/"/>

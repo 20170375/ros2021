@@ -8,7 +8,9 @@ local_costmap:
 
   static_map: false  
   rolling_window: true
-  width: 7      # local costmap 크기
-  height: 7     # local costmap 크기
+  # width: 7      # local costmap 크기
+  # height: 7     # local costmap 크기
+  width: 4      # local costmap 크기
+  height: 4     # local costmap 크기
   resolution: 0.05
   
